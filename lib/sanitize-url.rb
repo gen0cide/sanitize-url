@@ -1,6 +1,6 @@
 # Helper methods in this module are module methods so that they won't
 # pollute the namespace into which the module is mixed in.
-module SanitizeUrl
+module SanitizeURL
 	ALPHANUMERIC_CHAR_CODES = (48..57).to_a + (65..90).to_a + (97..122).to_a
 	
 	VALID_OPAQUE_SPECIAL_CHARS = ['!', '*', "'", '(', ')', ';', ':', '@', '&', '=', '+', '$', ',', '/', '?', '%', '#', '[', ']', '-', '_', '.', '~']
@@ -17,7 +17,7 @@ module SanitizeUrl
 	#   sanitize_url('javascript:alert("XSS")')
 	#   sanitize_url('javascript:alert("XSS")', :replace_evil_with => 'Replaced')
 	#   sanitize_url('ftp://example.com', :schemes => ['http', 'https'])
-	def sanitize_url(url, options = {})
+	def self.sanitize_url(url, options = {})
 		raise(ArgumentError, 'options[:schemes] must be an array') if options.has_key?(:schemes) and !options[:schemes].is_a?(Array)
 		options = {
 			:replace_evil_with => '',
