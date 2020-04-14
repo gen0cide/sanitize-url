@@ -5,13 +5,13 @@
 
 Gem::Specification.new do |s|
   s.name = %q{sanitize-url}
-  s.version = "0.1.4"
+  s.version = "0.1.5"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["jarrett"]
+  s.authors = ["gen0cide"]
   s.date = %q{2010-03-21}
   s.description = %q{This gem provides a module called SanitizeUrl, which you can mix-in anywhere you like. It provides a single method: sanitize_url, which accepts a URL and returns one with JavaScript removed. It also prepends the http:// scheme if no valid scheme is found.}
-  s.email = %q{jarrett@uchicago.edu}
+  s.email = %q{gen0cide.threats@gmail.com}
   s.extra_rdoc_files = [
     "LICENSE",
      "README.markdown"
