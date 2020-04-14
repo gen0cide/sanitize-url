@@ -25,7 +25,7 @@ module SanitizeURL
 			:schemes => ['http', 'https', 'ftp', 'ftps', 'mailto', 'svn', 'svn+ssh', 'git']
 		}.merge(options)
 		
-		url = SanitizeUrl.dereference_numerics(url)
+		url = SanitizeURL.dereference_numerics(url)
 		
 		# Schemes can consist of letters, digits, or any of the following special chars: + . -
 		# The scheme must begin with a letter and be terminated by a colon.
@@ -57,7 +57,7 @@ module SanitizeURL
 		# URL-encode the opaque portion as necessary. Only encode those bytes that are absolutely not allowed in URLs.
 		opaque = ''
 		unescaped_opaque.each_byte do |code|
-			if SanitizeUrl.url_encode?(code)
+			if SanitizeURL.url_encode?(code)
 				opaque << '%' << code.to_s(16).upcase
 			else
 				opaque << code.chr
